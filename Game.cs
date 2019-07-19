@@ -22,13 +22,22 @@ namespace TreehouseDefense
                         new MapLocation(7, 2, map)
                     }
                 );
+              
+                MapLocation location = new MapLocation(0, 2, map);
+              
+                /*if(path.IsOnPath(location))
+                {
+                    Console.WriteLine(location + " is on the path");
+                    return; // will exit the function called at this point
+                }*/
                 
-                Invader[] invaders = 
+                IInvader[] invaders = 
                 {
                     new ShieldedInvader(path),
                     new FastInvader(path),
                     new StrongInvader(path),
-                    new Invader(path)
+                    new BasicInvader(path),
+                    new ResurrectingInvader(path)
                 };
                 
                 Tower[] towers = {
